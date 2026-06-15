@@ -100,3 +100,17 @@ h1, h2, h3 {
     box-shadow: 4px 4px 0px var(--soft-pink);
 }
 
+/*Responsive Media Query*/
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+    }
+    .navbar ul {
+        margin-top: 15px;
+        gap: 10px;
+    }
+    .features-container {
+        flex-direction: column;
+    }
+}
