@@ -44,3 +44,35 @@ h1, h2, h3 {
     text-decoration: none;
     font-weight: bold;
 }
+
+.navbar a:hover {
+    text-decoration: underline;
+    color: #ddaab6;
+}
+
+/*Hero Section*/
+
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: var(--soft-pink);
+}
+
+.hero button {
+    padding: 12px 24px;
+    background-color: var(--dark-pink);
+    color: var(--white);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: 'Comic Neue', cursive;
+    font-weight: bold;    
+}
+
+.hero button:hover {
+    background-color: #860f43;
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
