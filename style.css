@@ -76,3 +76,27 @@ h1, h2, h3 {
     transition: 0.3s;
 }
 
+/*Features Section Styling*/
+
+#features {
+    padding: 40px 20px;
+}
+
+.features-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.feature-container div {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+    padding: 20px;
+    background-color: var(--white);
+    border: 2px solid var(--soft-pink);
+    border-radius: 15px;
+    box-shadow: 4px 4px 0px var(--soft-pink);
+}
+
