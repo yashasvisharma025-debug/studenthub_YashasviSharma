@@ -52,12 +52,10 @@ body {
     padding: 12px 24px;
     background-color: #77032d;
     color: #ffffff;
-    border: none;
+    border: 1px solid #77032d;
     border-radius: 25px;
     cursor: pointer;
-    font-size: 1rem;
-    font-family: 'Roboto', sans-serif;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 
@@ -92,7 +90,6 @@ body {
     background-color: #ffffff;
     border: 2px solid #ca767e;
     border-radius: 15px;
-    box-shadow: 4px 4px 0px #ca767e;
     }
 
 
