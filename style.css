@@ -76,7 +76,6 @@ body {
 .feature-container {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
     gap: 30px;
 }
 
@@ -90,6 +89,7 @@ body {
     background-color: #ffffff;
     border: 2px solid #ca767e;
     border-radius: 15px;
+
     }
 
 
