@@ -23,3 +23,23 @@ tasklist.addEventListener('click', (event) => {
         const taskItem=event.target.closest('li');
         taskItem.remove();
 }});
+
+let tasks=[];
+
+const taskInput=document.getElementById('taskInput');
+const addBtn=document.getElementById('addBtn');
+const taskList=document.getElementById('taskList');
+
+function render(){
+    taskList.innerHTML='';
+    tasks.forEach((taskText, index) => {
+        const li=document.createElement('li');
+        li.className="task-item";
+        li.innerHTML= `
+            <span>${taskText}</span>
+            <button class="del-btn" data-index="${index}">Delete</button>
+            `;
+        taskList.appendChild(li);
+    });
+}
+
