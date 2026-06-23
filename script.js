@@ -13,3 +13,7 @@ function addFeature(title, description){
 
     tasklist.appendChild(div);
 }
+
+addFeature("Organized", "Keep all your academic tasks and information in one place.");
+addFeature("Efficient", "Save time and effort with our streamlined academic management tools.");
+addFeature("Focused", "Stay on top of your academic goals and deadlines with ease.");
