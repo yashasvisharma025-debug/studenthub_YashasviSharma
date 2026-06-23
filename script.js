@@ -57,3 +57,12 @@ addBtn.addEventListener('click', () => {
         render();
     }
 });
+
+const notesContainer=document.getElementById('notesContainer');
+const addNoteBtn=document.getElementById('addNoteBtn');
+let notes=[];
+
+function renderNotes(){
+    notesContainer.innerHTML='';
+    notes.for
+}
