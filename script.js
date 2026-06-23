@@ -17,3 +17,9 @@ function addFeature(title, description){
 addFeature("Organized", "Keep all your academic tasks and information in one place.");
 addFeature("Efficient", "Save time and effort with our streamlined academic management tools.");
 addFeature("Focused", "Stay on top of your academic goals and deadlines with ease.");
+
+tasklist.addEventListener('click', (event) => {
+    if (event.target.classList.contains('del-btn')) {
+        const taskItem=event.target.closest('li');
+        taskItem.remove();
+}});
