@@ -43,3 +43,17 @@ function render(){
     });
 }
 
+taskList.addEventListener('click', (e) => {
+    if (e.target.classList.contains('del-btn')) {
+        const index=e.target.getAttribute('data-index');
+        tasks.splice(index,1);
+        render();
+}});
+
+addBtn.addEventListener('click', () => {
+    if (taskInput.ariaValueMax.trim() !==""){
+        tasks.push(taskInput.value);
+        taskInput.value='';
+        render();
+    }
+});
