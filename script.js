@@ -3,7 +3,7 @@ let notes=JSON.parse(localStorage.getItem('notes')) || [];
 
 const taskInput=document.getElementById('taskInput');
 const addBtn=document.getElementById('addBtn');
-const taskList=document.getElementById('tasklist');
+const taskList=document.getElementById('taskList');
 
 const notesContainer = document.getElementById('notesContainer');
 const addNoteBtn = document.getElementById('addNoteBtn');
