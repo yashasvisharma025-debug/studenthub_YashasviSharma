@@ -158,3 +158,5 @@ function toggleHabit(index){
 //Initialization
 renderTasks();
 renderNotes();
+renderBookmarks();
+renderHabits();
