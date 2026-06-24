@@ -74,7 +74,7 @@ function deleteNote(index){
 }
 
 addNoteBtn.addEventListener('click', () => {
-    const title = prompt("Note Ttitle:");
+    const title = prompt("Note Title:");
     const body = prompt("Note Body:");
     if (title && body) {
         notes.push({ title, body });
