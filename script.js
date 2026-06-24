@@ -1,16 +1,24 @@
+//Initial State and Session Handling
+
 let tasks= JSON.parse(localStorage.getItem('tasks')) || [];
 let notes=JSON.parse(localStorage.getItem('notes')) || [];
+
+//Session check to log user activity only once per tab session
 
 if (!sessionStorage.getItem('sessionStarted')){
     console.log("Session started: Welcome to Student Hub Dashboard.");
     sessionStorage.setItem('sessionStarted', 'true');
 }
 
+//DOM Elements Selection
+
 const taskInput=document.getElementById('taskInput');
 const addBtn=document.getElementById('addBtn');
 const taskList=document.getElementById('taskList');
 const notesContainer = document.getElementById('notesContainer');
 const addNoteBtn = document.getElementById('addNoteBtn');
+
+//Task Manager
 
 function renderTasks() {
     tasksList.innerHTML = '';
@@ -40,6 +48,8 @@ addBtn.addEventListener('click', () => {
         renderTasks();
     }
 });
+
+//Quick Notes Manager
 
 function renderNotes(){
     notesContainer.innerHTML='';
@@ -82,5 +92,6 @@ addNoteBtn.addEventListener('click', () => {
     }
 });
 
+//Initialization
 renderTasks();
 renderNotes();
