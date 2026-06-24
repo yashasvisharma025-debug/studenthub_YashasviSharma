@@ -3,6 +3,13 @@
 let tasks= JSON.parse(localStorage.getItem('tasks')) || [];
 let notes=JSON.parse(localStorage.getItem('notes')) || [];
 let bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
+let habits = JSON.parse(localStorage.getItem('habits')) || [
+    { name: 'Dance', done: false },
+    { name: 'Reading', done: false },
+    { name: 'Painting', done: false },
+    { name: 'Workout', done: false },
+    { name: 'Coding', done: false }
+];
 
 //Session check to log user activity only once per tab session
 
@@ -123,6 +130,30 @@ document.getElementById('addBookmarkBtn').addEventListener('click', () => {
         renderBookmarks();
     }
 });
+
+//Habit Tracker Manager
+
+function renderHabits(){
+    const habitContainer = document.getElementById('habitContainer');
+    habitContainer.innerHTML = '';
+    habits.forEach((habit, index) => {
+        const div = document.createElement('div');
+        div.className = "flex justify-between items-center p-3 border border-secondary rounded-lg";
+        div.innerHTML = `
+            <span class="${habit.done ? 'line-through text-gray-400' : 'text-primary'}">${habit.name}</span>
+            <button onclick="toggleHabit(${index})" class="px-3 py-1 ${habit.done ? 'bg-secondary' : 'bg-primary'} text-white rounded">
+                ${habit.done ? 'Done' : 'Check'}
+            </button>
+        `;
+        habitContainer.appendChild(div);
+    });
+    localStorage.setItem('habits', JSON.stringify(habits));
+}
+
+function toggleHabit(index){
+    habits[index].done = !habits[index].done;
+    renderHabits();
+}
 
 //Initialization
 renderTasks();
