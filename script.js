@@ -2,6 +2,7 @@
 
 let tasks= JSON.parse(localStorage.getItem('tasks')) || [];
 let notes=JSON.parse(localStorage.getItem('notes')) || [];
+let bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
 
 //Session check to log user activity only once per tab session
 
@@ -21,11 +22,11 @@ const addNoteBtn = document.getElementById('addNoteBtn');
 //Task Manager
 
 function renderTasks() {
-    tasksList.innerHTML = '';
+    taskList.innerHTML = '';
     tasks.forEach((task, index) => {
-        const li=document.createElement('li');
-        li.className="flex justify-between items-center p-3 bg-pink-50 rounded-lg border border-secondary";
-        li.innerHTML=`
+        const li = document.createElement('li');
+        li.className = "flex justify-between items-center p-3 bg-pink-50 rounded-lg border border-secondary";
+        li.innerHTML = `
             <span class="text-primary">${task}</span>
             <button class="del-btn text-red-500 font-bold" data-index="${index}">Delete</button>
         `;
@@ -89,6 +90,37 @@ addNoteBtn.addEventListener('click', () => {
     if (title && body) {
         notes.push({ title, body });
         renderNotes();
+    }
+});
+
+//Bookmark Manager
+
+function renderBookmarks() {
+    const bookmarkContainer = document.getElementById('bookmarkContainer');
+    bookmarkContainer.innerHTML = '';
+    bookmarks.forEach((link, index) => {
+        const div = document.createElement('div');
+        div.className = "p-3 bg-white border border-secondary rounded-lg flex justify-between items-center";
+        div.innerHTML = `
+            <a href="${link.url}" target="_blank" class="text-primary font-medium hover:underline">${link.name}</a>
+            <button onclick="deleteBookmark(${index})" class="text-red-500 text-xs font-bold">Delete</button>
+        `;
+        bookmarkContainer.appendChild(div);
+    });
+    localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+}
+
+function deleteBookmark(index) {
+    bookmarks.splice(index, 1);
+    renderBookmarks();
+}
+
+document.getElementById('addBookmarkBtn').addEventListener('click', () => {
+    const name = prompt("Site Name:");
+    const url = prompt("URL (e.g., https://google.com):");
+    if (name && url) {
+        bookmarks.push({ name, url });
+        renderBookmarks();
     }
 });
 
