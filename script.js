@@ -1,6 +1,11 @@
 let tasks= JSON.parse(localStorage.getItem('tasks')) || [];
 let notes=JSON.parse(localStorage.getItem('notes')) || [];
 
+if (!sessionStorage.getItem('sessionStarted')){
+    console.log("Session started: Welcome to Student Hub Dashboard.");
+    sessionStorage.setItem('sessionStarted', 'true');
+}
+
 const taskInput=document.getElementById('taskInput');
 const addBtn=document.getElementById('addBtn');
 const taskList=document.getElementById('taskList');
